@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ai-mentor-chat
+
+ai:
+  provider: ollama
+  default-system-prompt: "?? ? ???????? ???????? Java AI Mentor."
+
+  ollama:
+    url: http://localhost:11431
+    model: gemma3:4b-it-q4_K_M
+    temperature: 0.7
+    max-tokens: 1024
+    top_p: 0.9
+
