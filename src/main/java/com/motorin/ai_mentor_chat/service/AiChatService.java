@@ -1,4 +1,4 @@
-package com.motorin.ai_mentor_chat.serice;
+package com.motorin.ai_mentor_chat.service;
 
 import org.springframework.stereotype.Service;
 

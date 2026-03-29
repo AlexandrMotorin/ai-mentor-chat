@@ -1,16 +1,10 @@
 package com.motorin.ai_mentor_chat.config;
 
-import lombok.Data;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-import org.springframework.validation.annotation.Validated;
 
-@Component
-@Validated
-@RequiredArgsConstructor
+
 @Getter
 @Setter
 @ConfigurationProperties(prefix = "ai")
@@ -20,7 +14,7 @@ public class AiProperties {
 
     private String defaultSystemPrompt;
 
-    private OpenAi openAi = new OpenAi();
+    private OpenAi openai = new OpenAi();
     private Ollama ollama = new Ollama();
     private Anthropic anthropic = new Anthropic();
     private GigaChat gigaChat = new GigaChat();
@@ -38,9 +32,10 @@ public class AiProperties {
     @Getter
     @Setter
     public static class Ollama {
-        private String baseUrl = "http://localhost:11431";
+        private String url = "http://localhost:11431";
         private String model = "gemma3:4b-it-q4_K_M";        // здесь удобно указывать русские модели
         private Double temperature = 0.7;
+        private Double topP = 0.7;
         private Integer maxTokens = 4096;
         private Boolean formatJson = false;        // если нужно принудительно JSON
     }
@@ -62,7 +57,7 @@ public class AiProperties {
         private Double temperature =  0.5;       
         private Double topP = 0.5;             
         private int maxTokens = 200;
-        private int repetitionPenalty = 1;
-        private int updateInterval = 0;
+        private Double repetitionPenalty = 1D;
+        private Double updateInterval = 0D;
     }
 }

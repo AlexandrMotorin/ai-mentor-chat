@@ -19,7 +19,7 @@ target/
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
+/nbproject/private/AiProperties
 /nbbuild/
 /dist/
 /nbdist/
@@ -30,3 +30,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Koda ###
+.koda/
+./KODA.md
